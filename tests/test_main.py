@@ -3,11 +3,6 @@
 
 import unittest
 import os
-import sys
-
-# Adjust the path to import main module correctly
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from main import load_settings
 
 class TestMain(unittest.TestCase):
