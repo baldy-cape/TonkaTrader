@@ -1,26 +1,40 @@
 # tests/test_main.py
+"""Unit tests for the main module."""
+
 import unittest
 import os
+import sys
+
+# Adjust the path to import main module correctly
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from main import load_settings
 
 class TestMain(unittest.TestCase):
+    """Test cases for the main module."""
 
     def setUp(self):
-        # Create a temporary settings file for testing
+        """
+        Set up a temporary settings file before each test.
+        """
         self.temp_cfg_file = 'temp_settings.cfg'
-        with open(self.temp_cfg_file, 'w') as file:
+        with open(self.temp_cfg_file, 'w', encoding='utf-8') as file:
             file.write('[DEFAULT]\n')
             file.write('Setting1 = TestValue1\n')
 
     def tearDown(self):
-        # Remove the temporary file after testing
+        """
+        Clean up and remove the temporary settings file after each test.
+        """
         os.remove(self.temp_cfg_file)
 
     def test_load_settings(self):
+        """
+        Test loading of settings from a temporary configuration file.
+        """
         settings = load_settings(self.temp_cfg_file)
         self.assertIn('Setting1', settings['DEFAULT'])
         self.assertEqual(settings['DEFAULT']['Setting1'], 'TestValue1')
 
 if __name__ == '__main__':
     unittest.main()
-
