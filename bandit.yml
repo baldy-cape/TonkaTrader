@@ -1,0 +1,50 @@
+# bandit.yml
+# Sample configuration file for Bandit
+
+# Which files to scan
+# You can specify file paths or directory paths to include
+# Use glob patterns for matching files
+# examples:
+#   - '**/*.py'     # all .py files in all subdirectories
+#   - 'main.py'     # only main.py in the root directory
+targets:
+  - '**/*.py'
+
+# List of tests to skip
+# You can find the list of test IDs and their meanings in Bandit documentation
+# examples:
+#   - 'B101'        # assert_used
+#   - 'B102'        # exec_used
+skips:
+  - 'B101'
+  - 'B102'
+
+# Severity levels: LOW, MEDIUM, HIGH
+# Confidence levels: LOW, MEDIUM, HIGH
+# Only report issues with at least this severity and confidence
+severity: 'LOW'
+confidence: 'LOW'
+
+# Plugin settings
+# You can configure individual tests
+# example:
+#   use_defusedxml:
+#     checks: ['xml']
+
+# Output formats: txt, xml, json, csv, html, yaml
+# example:
+#   output_format: 'json'
+#   output_file: 'bandit_report.json'
+output_format: 'txt'
+
+# Include line numbers in the output
+show_lineno: true
+
+# Verbosity level: -1 (quiet), 0 (default), 1 (more info), 2 (debug)
+verbosity: 1
+
+# Number of concurrent processes to use
+# example:
+#   number_of_concurrent_jobs: 4
+number_of_concurrent_jobs: 1
+
