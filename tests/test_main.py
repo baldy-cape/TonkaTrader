@@ -5,6 +5,7 @@ import unittest
 import os
 from main import load_settings
 
+
 class TestMain(unittest.TestCase):
     """Test cases for the main module."""
 
@@ -30,6 +31,7 @@ class TestMain(unittest.TestCase):
         settings = load_settings(self.temp_cfg_file)
         self.assertIn('Setting1', settings['DEFAULT'])
         self.assertEqual(settings['DEFAULT']['Setting1'], 'TestValue1')
+
 
 if __name__ == '__main__':
     unittest.main()

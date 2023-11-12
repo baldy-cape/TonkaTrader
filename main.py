@@ -3,6 +3,7 @@
 
 import configparser
 
+
 def load_settings(filepath):
     """
     Load settings from a configuration file.
@@ -16,6 +17,7 @@ def load_settings(filepath):
     config = configparser.ConfigParser()
     config.read(filepath)
     return config
+
 
 if __name__ == "__main__":
     settings = load_settings('settings.cfg')
