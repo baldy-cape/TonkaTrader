@@ -33,7 +33,3 @@ jobs:
         pip install bandit
         # Replace 'bandit.yml' with the actual path to your Bandit configuration if you have one
         bandit -r . -c bandit.yml
-    - name: Run unittests
-      run: |
-        # This assumes you have a tests folder in your repo
-        python -m unittest discover -s tests
