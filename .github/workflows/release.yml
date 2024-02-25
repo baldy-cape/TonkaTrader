@@ -12,7 +12,7 @@ jobs:
         contents: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # Fetches all history for all tags and branches, necessary for semantic-release
           fetch-depth: 0
