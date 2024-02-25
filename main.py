@@ -5,7 +5,11 @@ A toy stock trading program that uses machine learning to predict stock prices.
 from pprint import pprint
 import ast
 from datetime import datetime
-from tonka_trader import load_settings_file, create_empty_df, fill_full_training_data
+from tonka_trader.helpers import (
+    load_settings_file,
+    create_empty_df,
+    fill_full_training_data,
+)
 
 if __name__ == "__main__":
     settings = load_settings_file("settings.cfg")
